@@ -23,6 +23,7 @@ def imageClassify(serializer):
 	image_name=serializer.data['id']
 	# image_file=serializer.data['image']
 	# print(image_file)
+	print(image_name)
 
 	phot = Stock.objects.get(id=image_name)
 	#phot = Stock.objects.get(name='A3')
@@ -86,6 +87,7 @@ class StockList(APIView):
 		
 		if serializer.is_valid():
 			serializer.save()
+			print("received")
 
 			#console.log(score)
 			requ = imageClassify(serializer)
@@ -95,6 +97,7 @@ class StockList(APIView):
 			snippet = Stock.objects.get(id= img_name)
 			# comment below line to store the posted imageClassify 
 			snippet.delete()
+			print("response sent")
 			return Response(requ, status=status.HTTP_201_CREATED)
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

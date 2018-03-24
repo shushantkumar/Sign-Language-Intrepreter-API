@@ -38,6 +38,8 @@ def predict(sess,softmax_tensor,label_lines,image_data):
 
 def videoClassify(serializer):
 	video_name=serializer.data['id']
+	#print("Request Number: "+video_name)\
+	print(video_name)
 	vide = VideoSign.objects.get(id=video_name)
 	video_path= vide.video.path
 	print(video_path)
@@ -129,6 +131,7 @@ class VideoSignList(APIView):
 
 		
 		if serializer.is_valid():
+			print("received")
 			serializer.save()
 
 			#console.log(score)
@@ -139,5 +142,6 @@ class VideoSignList(APIView):
 			snippet = VideoSign.objects.get(id= vid_name)
 			# comment below line to store the posted imageClassify 
 			snippet.delete()
+			print("response sent")
 			return Response(requ, status=status.HTTP_201_CREATED)
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
