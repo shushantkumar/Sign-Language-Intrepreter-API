@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'webapp',
     'rest_framework',
     'videoapp',
-    'streamapp'
 ]
 
 MIDDLEWARE = [

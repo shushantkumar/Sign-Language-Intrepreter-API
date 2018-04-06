@@ -21,14 +21,12 @@ from django.conf.urls.static import static
 from rest_framework.urlpatterns import format_suffix_patterns
 from webapp import view
 from videoapp import views
-from streamapp import viewss
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^stocks/', view.StockList.as_view()),
-    url(r'^video/',views.VideoSignList.as_view()),
-    url(r'^stream/',viewss.StreamList.as_view())  
+    url(r'^video/',views.VideoSignList.as_view()) 
 ]
 
 #urlpatterns = format_suffix_patterns(urlpatterns)
