@@ -1,6 +1,5 @@
 # DjangoImage
 
-Image get and post request working<br>
-taking image and processing and returning the detailed score of each alphabet<br>
+python manage.py runserver
 
-Video post request also working <br>
+Video requests on /video
