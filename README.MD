@@ -7,5 +7,8 @@ python manage.py runserver "ipaddress:port" <br>
 Example - python manage.py runserver 10.10.53.4:8000 <br>
 The server will be live on the address you mention. For above example it will be live on http://10.10.53.4:8000<br>
 
+For Image requests append "/stock" to the server address <br>
+Eg. http://10.10.53.4:8000/stock
+
 For Video requests append "/video" to the server address <br>
 Eg. http://10.10.53.4:8000/video
